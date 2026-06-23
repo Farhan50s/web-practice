@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+
+            <li>
+                <a href="#">Courses ▾</a>
+                <ul class="dropdown">
+                    <li class="dropdown-content"><a href="#">BSIT</a></li>
+                    <li class="dropdown-content"><a href="#">BSCS</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <form onsubmit="alert('Form submitted successfully!')">
+            <h2>Registration Form</h2>
+            <label>Name:</label><br>
+            <input type="text" placeholder="Enter your name">
+            <br>
+            <label>Email:</label><br>
+            <input type="email" placeholder="Enter your email">
+            <br>
+            <label>Password:</label><br>
+            <input type="password" placeholder="Enter your password">
+            <br>
+            <button type="submit" onclick="">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

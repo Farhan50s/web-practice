@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dom Elements </h1>
+    <p class="note"> Paragraph 1</p>
+    <p class="note"> Paragraph 2</p>
+
+    <script>
+        var para = document.querySelector(".note");
+        para.style.fontWeight = "bold";
+        para.innerHTML = "Changed with getElementById"; 
+        heading = document.querySelector("h1");
+        heading.style.color = "red";
+    </script>
+</body>
+</html>

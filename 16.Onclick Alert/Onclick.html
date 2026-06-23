@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Web Technologies</h1>
+    <p>Click the button to display an alert box.</p>
+    <button onclick="alert('Hello World')">Hit me</button>
+    <button onclick=changecolor()>Red </button>
+    <button id="btn"> Blue</button>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+
+
+        document.getElementById("btn").addEventListener("click", function () {
+            if (document.body.style.backgroundColor == "blue") {
+                document.body.style.backgroundColor = "white";
+            }
+            else
+                document.body.style.backgroundColor = "blue";
+        })
+        function changecolor() {
+            if (document.body.style.backgroundColor == "red") {
+                document.body.style.backgroundColor = "white";
+            }
+            else
+                document.body.style.backgroundColor = "red";
+
+        }
+        $(document).ready(function () {
+            alert("Page is ready!");
+        }); 
+    </script>
+</body>
+
+</html>
