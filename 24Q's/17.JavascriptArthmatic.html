@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .calculator-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        label {
+            font-weight: 600;
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-top: 15px;
+        }
+        input {
+            padding: 10px;
+            margin-top: 5px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            margin-top: 20px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .results p {
+            font-size: 16px;
+            color: #555;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator-card">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" placeholder="Enter a number">
+
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" placeholder="Enter a number">
+
+        <button onclick="calculate()">Calculate</button>
+
+        <div class="results">
+            <p id="Addresult"></p>
+            <p id="Subresult"></p>
+            <p id="Mulresult"></p>
+            <p id="Divresult"></p>
+        </div>
+    </div>
+    
+    <script>
+        function calculate() {
+            // 1. Fetch values inside the function so they are read when clicked
+            var v1 = parseFloat(document.getElementById("num1").value);
+            var v2 = parseFloat(document.getElementById("num2").value);
+
+            // 2. Fallback check if inputs are empty or invalid numbers (Fixed Typo Here!)
+            if (isNaN(v1) || isNaN(v2)) {
+                alert("Please enter valid numbers in both fields.");
+                return;
+            }
+
+            // 3. Perform calculations and update the DOM
+            document.getElementById("Addresult").innerHTML = "Addition: " + (v1 + v2);
+            document.getElementById("Subresult").innerHTML = "Subtraction: " + (v1 - v2);
+            document.getElementById("Mulresult").innerHTML = "Multiplication: " + (v1 * v2);
+            
+            // Handle division by zero cleanly
+            if (v2 === 0) {
+                document.getElementById("Divresult").innerHTML = "Division: Cannot divide by zero";
+            } else {
+                document.getElementById("Divresult").innerHTML = "Division: " + (v1 / v2);
+            }
+        }
+    </script>
+</body>
+</html>
